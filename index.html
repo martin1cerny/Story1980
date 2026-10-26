@@ -1,0 +1,367 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Půjčená kniha, 1980</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Barlow+Condensed:wght@500;600;700&display=swap">
+<style>
+/* Layout: one narrow column; each scene is a carbon-copy sheet on a desk, with a meter strip above and a path log below */
+:root {
+  --desk: #dfe3e1;        /* grey-green desk */
+  --paper: #f7f8f3;       /* onionskin */
+  --ink: #1f2230;         /* typewriter ribbon */
+  --carbon: #3f3a86;      /* violet carbon copy */
+  --muted: #5d6270;
+  --rule: #c9cdd2;
+  --danger: #a3302a;
+  --display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  --type: "Courier Prime", "Courier New", Courier, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --desk: #14151b; --paper: #1f2029; --ink: #e6e6df; --carbon: #a9a2f0; --muted: #a2a5b1; --rule: #353745; --danger: #ec7c72; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --desk: #14151b; --paper: #1f2029; --ink: #e6e6df; --carbon: #a9a2f0; --muted: #a2a5b1; --rule: #353745; --danger: #ec7c72; color-scheme: dark }
+
+body { background: var(--desk); color: var(--ink); font-family: var(--type); font-size: 17px; line-height: 1.6; }
+.wrap { max-width: 720px; margin: 0 auto; padding-block: 28px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-direction: column; gap: 20px; }
+header { display: flex; flex-direction: column; gap: 4px; }
+.eyebrow { font-family: var(--display); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 13px; color: var(--carbon); }
+h1 { font-family: var(--display); font-weight: 700; font-size: clamp(32px, 7vw, 46px); line-height: 1.05; margin: 0; text-wrap: balance; }
+.lede { color: var(--muted); font-size: 15px; margin: 4px 0 0; max-width: 60ch; }
+
+.meters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.meter { background: var(--paper); border: 1px solid var(--rule); border-radius: 3px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.meter .lab { font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.meter .val { font-family: var(--display); font-weight: 700; font-size: 28px; line-height: 1; font-variant-numeric: tabular-nums; }
+.pips { display: flex; gap: 4px; height: 28px; align-items: center; }
+.pip { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--danger); }
+.pip.on { background: var(--danger); }
+
+.sheet { background: var(--paper); border: 1px solid var(--rule); padding: 28px clamp(18px, 5vw, 40px) 26px; position: relative;
+  box-shadow: 4px 4px 0 -1px var(--paper), 4px 4px 0 0 var(--rule), 8px 8px 0 -1px var(--paper), 8px 8px 0 0 var(--rule); }
+.sheet .copyno { position: absolute; top: 10px; right: 14px; font-size: 12px; color: var(--muted); }
+.sheet .place { font-size: 13px; color: var(--carbon); margin: 0 0 12px; }
+.sheet h2 { font-family: var(--type); font-weight: 700; font-size: 19px; margin: 0 0 12px; text-transform: uppercase; letter-spacing: .04em; }
+.sheet p { margin: 0 0 14px; max-width: 62ch; }
+.sheet p.quote { padding-left: 14px; border-left: 2px solid var(--carbon); font-style: italic; }
+.fade-in { animation: fade .35s ease-out; }
+@keyframes fade { from { opacity: .35; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .fade-in { animation: none; } }
+
+.choices { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; }
+.choice { font: inherit; font-size: 16px; text-align: left; cursor: pointer; color: var(--ink); background: transparent;
+  border: 1.5px solid var(--ink); border-radius: 2px; padding: 12px 14px; display: flex; gap: 10px; align-items: baseline; }
+.choice::before { content: "→"; color: var(--carbon); font-weight: 700; }
+.choice:hover { background: var(--ink); color: var(--paper); }
+.choice:hover::before { color: var(--paper); }
+.choice:focus-visible { outline: 3px solid var(--carbon); outline-offset: 2px; }
+
+.ending-tag { display: inline-block; font-family: var(--display); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; font-size: 14px;
+  color: var(--carbon); border: 2px solid var(--carbon); padding: 2px 10px; transform: rotate(-2deg); margin-bottom: 12px; }
+.box { border-top: 1px dashed var(--rule); padding-top: 14px; margin-top: 18px; }
+.box h3 { font-family: var(--display); font-weight: 700; font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: var(--carbon); margin: 0 0 6px; }
+.box p { font-size: 15px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.btn { font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: .06em; text-transform: uppercase; cursor: pointer;
+  border: 0; border-radius: 2px; padding: 10px 16px; background: var(--ink); color: var(--paper); }
+.btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+.btn:focus-visible { outline: 3px solid var(--carbon); outline-offset: 2px; }
+
+.log, .found { font-size: 14px; color: var(--muted); }
+.log h3, .found h3 { font-family: var(--display); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; font-size: 13px; margin: 0 0 6px; color: var(--muted); }
+.log ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 2px; }
+.found ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.found li { border: 1px solid var(--rule); padding: 2px 8px; border-radius: 2px; }
+.found li.got { border-color: var(--carbon); color: var(--carbon); }
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 12px; }
+@media (max-width: 420px) { .meter .val { font-size: 24px; } .pip { width: 11px; height: 11px; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Rozhodovací příběh · samizdat</span>
+    <h1>Půjčená kniha, 1980</h1>
+    <p class="lede">Fiktivní příběh inspirovaný skutečnými situacemi z doby normalizace. Rozhoduješ ty. Příběh má sedm různých konců a žádný z nich není „správný“.</p>
+  </header>
+
+  <section class="meters" aria-label="Stav příběhu">
+    <div class="meter"><span class="lab">Kopie</span><span class="val" id="m-copies">0</span></div>
+    <div class="meter"><span class="lab">Čtenáři</span><span class="val" id="m-readers">0</span></div>
+    <div class="meter"><span class="lab">Pozornost StB</span><div class="pips" id="m-risk" role="img" aria-label="0 z 5"></div></div>
+  </section>
+
+  <article class="sheet" id="sheet" aria-live="polite"></article>
+
+  <section class="log" id="log" hidden>
+    <h3>Tvoje cesta</h3>
+    <ol id="log-list"></ol>
+  </section>
+
+  <section class="found">
+    <h3>Objevené konce <span id="found-count">0 / 7</span></h3>
+    <ul id="found-list"></ul>
+  </section>
+
+  <footer>Postavy jsou smyšlené. Historické poznámky u konců popisují, jak podobné situace v Československu skutečně probíhaly.</footer>
+</div>
+
+<script>
+const ENDINGS = {
+  e_refuse:  "Opatrnost",
+  e_return:  "Vrácená kniha",
+  e_lost:    "Ztracená kopie",
+  e_back:    "Krok zpět",
+  e_name:    "Jméno",
+  e_silence: "Mlčení",
+  e_network: "Opisovač"
+};
+
+const S = {
+  start: {
+    place: "Praha, listopad 1980",
+    text: [
+      "Je ti sedmnáct a chodíš do třetího ročníku gymnázia. Soused Tomáš kdysi učil na vysoké škole, teď pracuje jako topič v kotelně. Za normalizace ho vyhodili, protože nesouhlasil s okupací.",
+      "V pátek večer ti na chodbě podá těžký sešit v novinovém papíře. Je to strojopis: George Orwell, 1984. Kniha, která u nás oficiálně vyjít nesmí.",
+      "„Do pondělí. A nikomu ani slovo,“ řekne tiše."
+    ],
+    choices: [
+      { t: "Vezmu si ho.", go: "read", fx: { readers: 1 }, log: "Vzal(a) sis strojopis." },
+      { t: "Odmítnu. Nechci riskovat problémy.", go: "e_refuse", log: "Odmítl(a) jsi." }
+    ]
+  },
+  read: {
+    place: "Sobota",
+    text: [
+      "Čteš celou noc. Ministerstvo pravdy, Velký bratr, dvojí myšlení. Máš pocit, že to někdo napsal o vás, o škole, o schůzích SSM, o tom, co se smí říkat nahlas.",
+      "Odpoledne se zastaví spolužačka Jana a sešit na stole uvidí. „Co to je? Půjčíš mi to?“"
+    ],
+    choices: [
+      { t: "Půjčím ho Janě. Slíbí, že ho v neděli vrátí.", go: "jana", fx: { readers: 1, risk: 1 }, log: "Půjčil(a) jsi knihu Janě." },
+      { t: "Řeknu, že je to učebnice, a schovám ho.", go: "keep", log: "Knihu jsi schoval(a)." }
+    ]
+  },
+  keep: {
+    place: "Neděle",
+    text: [
+      "V neděli tě napadne, že Tomáš knihu v pondělí odnese a bude pryč. Na půdě stojí tátův starý psací stroj Consul.",
+      "Opsat 300 stran by trvalo týdny. Ale pak by kniha zůstala a mohl by ji číst i někdo další."
+    ],
+    choices: [
+      { t: "Zeptám se Tomáše, jestli ji smím opsat.", go: "ask", log: "Zeptal(a) ses Tomáše na opis." },
+      { t: "Vrátím ji Tomášovi a nechám to být.", go: "e_return", log: "Knihu jsi vrátil(a)." }
+    ]
+  },
+  ask: {
+    place: "Pondělí, kotelna",
+    text: [
+      "Tomáš se dlouho dívá. „Opisovat je víc práce, než si myslíš. A když u tebe najdou stroj s rozepsanou stránkou, nevymluvíš se.“",
+      "Pak z kapsy vytáhne balík tenkého průklepového papíru a kopírák. „Dej tam osm listů. Víc se jich neprorazí. A knihu mi vrať do měsíce.“"
+    ],
+    choices: [
+      { t: "Pustím se do opisování.", go: "copy", log: "Začal(a) jsi opisovat." }
+    ]
+  },
+  jana: {
+    place: "Pondělí ráno",
+    text: [
+      "Jana knihu v neděli nevrátila. Ve škole se omlouvá: „Půjčila jsem ji bratrovi, jen na jednu noc. Prý ji chtěl vidět kamarád z práce.“",
+      "Odpoledne má Tomáš knihu dostat zpátky."
+    ],
+    choices: [
+      { t: "Půjdu hned za Janiným bratrem.", go: "brother", log: "Hledal(a) jsi knihu u Janina bratra." },
+      { t: "Řeknu to Tomášovi na rovinu.", go: "confess", log: "Přiznal(a) ses Tomášovi." }
+    ]
+  },
+  brother: {
+    place: "Pondělí večer",
+    text: [
+      "Janin bratr pokrčí rameny. Kamarád z práce si knihu vzal „pro švagra“. Jméno švagra nezná a kamarád má dva týdny dovolenou.",
+      "Nikdo neví, kde kniha je. Možná ji právě někdo čte. Možná ji někdo odevzdal."
+    ],
+    choices: [
+      { t: "Jdu to říct Tomášovi.", go: "e_lost", fx: { readers: 3, risk: 1 }, log: "Stopa knihy se ztratila." }
+    ]
+  },
+  confess: {
+    place: "Kotelna",
+    text: [
+      "Tomáš se nezlobí tolik, jak jsi čekal(a). „Kopie se ztrácejí pořád. Horší je, že nevíme, v čích rukou skončí. Hlavně o mně nikomu neříkej.“",
+      "Chvíli mlčí. „Jestli to chceš napravit, umíš psát na stroji? Potřebujeme novou kopii.“"
+    ],
+    choices: [
+      { t: "Pomůžu. Opíšu ji.", go: "copy", log: "Nabídl(a) ses k opisování." },
+      { t: "Ne, už s tím nechci mít nic společného.", go: "e_back", log: "Z věci jsi vycouval(a)." }
+    ]
+  },
+  copy: {
+    place: "Prosinec, tvůj pokoj",
+    text: [
+      "Píšeš po večerech, deset stran denně. Do stroje vkládáš osm listů proložených kopírákem. Osmá kopie je bledá, skoro nečitelná. Klapot slyší celý byt.",
+      "Jednou večer stojí ve dveřích táta. Dívá se na stránku ve stroji: „Válka je mír. Svoboda je otroctví.“"
+    ],
+    choices: [
+      { t: "Řeknu mu pravdu.", go: "dad_truth", fx: { risk: 1 }, log: "Řekl(a) jsi tátovi pravdu." },
+      { t: "Tvrdím, že píšu referát do angličtiny.", go: "dad_lie", log: "Zalhal(a) jsi tátovi." }
+    ]
+  },
+  dad_truth: {
+    place: "Kuchyň, půlnoc",
+    text: [
+      "Táta zbledne. „Víš, co by to znamenalo pro mě v práci? A ty chceš na vysokou.“ Dlouho sedíte u stolu.",
+      "Pak řekne: „Piš jen se zataženými závěsy, papíry neschovávej v pokoji a stroj pak vrať na půdu. A já o ničem nevím.“"
+    ],
+    choices: [ { t: "Dopíšu to.", go: "copies", fx: { copies: 8 }, log: "Dopsal(a) jsi osm kopií." } ]
+  },
+  dad_lie: {
+    place: "Chodba",
+    text: [
+      "Táta kývne a odejde. Nevěří ti úplně, ale nic neřekne. Od té doby se doma o některých věcech mlčí.",
+      "Tak to v mnoha rodinách fungovalo: co nevíš, to nemůžeš prozradit."
+    ],
+    choices: [ { t: "Dopíšu to.", go: "copies", fx: { copies: 8 }, log: "Dopsal(a) jsi osm kopií." } ]
+  },
+  copies: {
+    place: "Leden 1981",
+    text: [
+      "Po pěti týdnech máš osm kopií. Originál jsi Tomášovi vrátil(a). Teď máš v ruce sedm čitelných exemplářů a jeden bledý.",
+      "Komu je dáš?"
+    ],
+    choices: [
+      { t: "Rozdám je ve třídě a mezi kamarády. Ať to čte co nejvíc lidí.", go: "school", fx: { readers: 30, risk: 2 }, log: "Kopie jsi rozdal(a) ve škole." },
+      { t: "Jen lidem, kterým věřím. Každý ji smí dát dál jen ověřenému člověku.", go: "trusted", fx: { readers: 12 }, log: "Kopie jsi dal(a) jen ověřeným lidem." }
+    ]
+  },
+  school: {
+    place: "Únor, ředitelna",
+    text: [
+      "Za dva týdny čte Orwella půl školy. Pak tě zavolají z hodiny matematiky do ředitelny. Ředitel se ti nedívá do očí. U okna stojí muž v šedém saku.",
+      "Na služebně ti nabídne cigaretu."
+    ],
+    quote: "„Nám jde jen o toho, kdo vám to dal. Vy jste mladý, máte celý život před sebou. Na vysokou byste se rád dostal, ne?“",
+    choices: [
+      { t: "Řeknu Tomášovo jméno.", go: "e_name", fx: { risk: 1 }, log: "Při výslechu jsi řekl(a) jméno." },
+      { t: "Řeknu, že jsem knihu našel(našla) v tramvaji. Víc nic.", go: "e_silence", fx: { risk: 1 }, log: "Při výslechu jsi mlčel(a)." }
+    ]
+  },
+  trusted: {
+    place: "Jaro 1981",
+    text: [
+      "Kopie putují pomalu, od ruky k ruce, vždy jen na pár dní. Za dva měsíce je přečetlo asi čtyřicet lidí a nikdo nebyl zadržen. Jednu kopii už někdo opsal znovu.",
+      "Tomáš ti jednou v kotelně řekne: „Hledáme lidi, co umějí psát na stroji. Pro edici. Novou knihu každý měsíc.“"
+    ],
+    choices: [
+      { t: "Přidám se.", go: "e_network", fx: { readers: 28, copies: 8, risk: 1 }, log: "Přidal(a) ses k opisovačům." },
+      { t: "Mám strach o rodinu. Tady končím.", go: "e_back", fx: { readers: 28 }, log: "Z dalšího opisování jsi vycouval(a)." }
+    ]
+  },
+
+  e_refuse: { ending: true, place: "Pátek večer",
+    text: [ "Tomáš kývne, bez výčitek. „Rozumím.“ Kniha jde k někomu jinému. Tobě se nic nestane a ve škole i doma je klid.",
+            "Ještě dlouho přemýšlíš, co v tom sešitě vlastně bylo." ],
+    real: "Takhle se rozhodovala většina lidí. Havel v eseji Moc bezmocných popisuje zelináře, který do výlohy dá heslo „Proletáři všech zemí, spojte se!“, aniž by tomu věřil, jen aby měl klid. Strach byl rozumný: postihy byly skutečné.",
+    sim: "Ne každý, kdo dostane nabídku, ji přijme. Jak velká část oslovených lidí se do čtení zapojí? Co se stane se šířením, když je tato část malá?" },
+  e_return: { ending: true, place: "Pondělí",
+    text: [ "Vrátíš knihu včas. Tomáš ji předá dalšímu čtenáři v pořadí. Ty víš něco, co jsi předtím nevěděl(a), a nikomu to neřekneš." ],
+    real: "Jeden strojopis často prošel desítkami rukou. Výpůjčky byly krátké, někdy jen na jednu noc, aby kniha stihla oběhnout co nejvíc lidí a nikde se dlouho nezdržela.",
+    sim: "Jak dlouho jeden čtenář drží kopii, než ji předá dál? Zkus v modelu měnit dobu výpůjčky a sleduj, jak rychle přibývají čtenáři." },
+  e_lost: { ending: true, place: "Kotelna",
+    text: [ "Tomáš vzdychne. „Tak ji čte někdo, koho neznáme. Buď bude kolovat dál, nebo skončí na stole u estébáka.“",
+            "O měsíc později se dozvíš, že u jednoho chlapíka z Janina bratra podniku byla domovní prohlídka. Jestli tam byla i vaše kniha, se nikdy nedozvíš." ],
+    real: "Kopie se běžně ztrácely nebo je zabavila StB při domovních prohlídkách. Proto se samizdat předával jen mezi známými a čtenáři často nevěděli, odkud text původně pochází.",
+    sim: "Neřízené šíření je rychlé, ale kopie se ztrácejí a riziko roste. Zahrň do modelu, že část kopií se ztratí nebo je zabavena." },
+  e_back: { ending: true, place: "Doma",
+    text: [ "Už se do ničeho nezapojíš. Tomáše potkáváš na chodbě, pozdravíte se, víc nic. Co jsi udělal(a), ale zůstává: kniha, kterou jsi pomohl(a) šířit, koluje dál beze tebe." ],
+    real: "Mnoho lidí se do samizdatu zapojilo jen na chvíli: jednou opsali, jednou půjčili, pak přestali. I tito „příležitostní“ účastníci byli pro šíření důležití.",
+    sim: "Lidé se do šíření nezapojují napořád, někdo po čase přestane. Jak to ovlivní počet těch, kdo text aktivně šíří, a počet čtenářů?" },
+  e_name: { ending: true, place: "Březen 1981",
+    text: [ "Pustí tě domů. Za týden mají u Tomáše domovní prohlídku. Zabaví mu psací stroj, desítky strojopisů a adresář. Tomáš na tebe na chodbě nepromluví.",
+            "Na vysokou se nakonec dostaneš. Ten večer na služebně si ale budeš pamatovat dlouho." ],
+    real: "StB často tlačila právě na mladé lidi a používala jejich budoucnost jako páku: studium, práci, rodiče. Mnoho lidí pod tlakem promluvilo. Dnes se o tom mluví bez odsuzování: tlak byl obrovský a výslech vedli profesionálové.",
+    sim: "Jedno zadržení může vést k dalším. Jak se šíření změní, když odhalení jednoho člověka zvýší riziko i pro ostatní?" },
+  e_silence: { ending: true, place: "Jaro 1981",
+    text: [ "Opakuješ pořád dokola: tramvaj, linka 22, nevím. Po šesti hodinách tě pustí. Rodiče jsou předvoláni do školy a dostaneš důtku ředitele.",
+            "Maturitu složíš, ale přihlášku na vysokou ti nedoporučí. Tomáš je v bezpečí a kniha dál koluje." ],
+    real: "Odmítnout výpověď nebo „nic nevědět“ bylo možné, ale mělo to cenu: zákaz studia, potíže pro rodiče, sledování. Takové „kádrové“ tresty dopadaly i na děti disidentů, které nic neudělaly.",
+    sim: "Rozdávání ve velkém zvýší počet čtenářů rychle, ale i pravděpodobnost odhalení. Najdi v modelu rovnováhu mezi rychlostí a bezpečím." },
+  e_network: { ending: true, place: "1981–1989",
+    text: [ "Stáváš se jedním z opisovačů. Každý měsíc ti někdo přinese rukopis a ty z něj uděláš osm kopií. Nevíš, kdo je dostane, a nemáš to vědět.",
+            "Za osm let projdou tvým strojem desítky knih. V listopadu 1989 stojíš na Václavském náměstí a slyšíš z tribuny lidi, jejichž texty jsi opisoval(a)." ],
+    real: "Edice Petlice a Expedice stály na lidech, kteří po večerech opisovali. Často to byly ženy, které psaly na stroji profesionálně, ale pomáhali i studenti, důchodci a lidé, kteří o politiku dřív nestáli.",
+    sim: "Opisováním vznikne z jedné kopie osm. Jak počet opisovačů ovlivní, kolik kopií přibývá a jak rychle roste počet čtenářů?" }
+};
+
+const state = { node: "start", copies: 0, readers: 0, risk: 0, log: [] };
+let found = new Set();
+try { found = new Set(JSON.parse(localStorage.getItem("samizdat-endings") || "[]")); } catch (e) {}
+
+const $ = id => document.getElementById(id);
+const esc = s => s.replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+
+function renderMeters() {
+  $("m-copies").textContent = state.copies;
+  $("m-readers").textContent = state.readers;
+  const r = Math.min(state.risk, 5);
+  $("m-risk").innerHTML = Array.from({ length: 5 }, (_, i) => `<span class="pip${i < r ? " on" : ""}"></span>`).join("");
+  $("m-risk").setAttribute("aria-label", `${r} z 5`);
+}
+
+function renderFound() {
+  $("found-count").textContent = `${found.size} / 7`;
+  $("found-list").innerHTML = Object.entries(ENDINGS)
+    .map(([k, n]) => `<li class="${found.has(k) ? "got" : ""}">${found.has(k) ? esc(n) : "???"}</li>`).join("");
+}
+
+function renderLog() {
+  $("log").hidden = state.log.length === 0;
+  $("log-list").innerHTML = state.log.map(l => `<li>${esc(l)}</li>`).join("");
+}
+
+function render() {
+  const n = S[state.node];
+  const sheet = $("sheet");
+  const step = state.log.length + 1;
+  let h = `<span class="copyno">list ${step}</span><p class="place">${esc(n.place)}</p>`;
+  if (n.ending) h += `<span class="ending-tag">Konec: ${esc(ENDINGS[state.node])}</span>`;
+  h += n.text.map(p => `<p>${esc(p)}</p>`).join("");
+  if (n.quote) h += `<p class="quote">${esc(n.quote)}</p>`;
+  if (n.ending) {
+    h += `<div class="box"><h3>Jak to bylo doopravdy</h3><p>${esc(n.real)}</p></div>`;
+    h += `<div class="box"><h3>Pro model</h3><p>${esc(n.sim)}</p></div>`;
+    h += `<div class="actions"><button class="btn" id="again">Hrát znovu</button></div>`;
+  } else {
+    h += `<div class="choices">` + n.choices.map((c, i) => `<button class="choice" data-i="${i}">${esc(c.t)}</button>`).join("") + `</div>`;
+  }
+  sheet.innerHTML = h;
+  sheet.classList.remove("fade-in"); void sheet.offsetWidth; sheet.classList.add("fade-in");
+  sheet.querySelectorAll(".choice").forEach(b => b.addEventListener("click", () => choose(n.choices[+b.dataset.i])));
+  const again = $("again");
+  if (again) again.addEventListener("click", restart);
+  renderMeters(); renderLog(); renderFound();
+}
+
+function choose(c) {
+  const fx = c.fx || {};
+  state.copies += fx.copies || 0;
+  state.readers += fx.readers || 0;
+  state.risk += fx.risk || 0;
+  state.log.push(c.log);
+  state.node = c.go;
+  if (S[c.go].ending) {
+    found.add(c.go);
+    try { localStorage.setItem("samizdat-endings", JSON.stringify([...found])); } catch (e) {}
+  }
+  render();
+  $("sheet").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+}
+
+function restart() {
+  Object.assign(state, { node: "start", copies: 0, readers: 0, risk: 0, log: [] });
+  render();
+}
+
+render();
+</script>
+
+</body></html>
